@@ -68,4 +68,4 @@ Linux 桌面环境只测试了deepin，Cinnamon，其他未测试。
 爱换壁纸是一个开源软件，软件使用AGPL-3.0协议，请勿用于商业用途，软件中的数据均来自互联网。
 
 [ai-fun-wallpaper]: https://gitee.com/ctzjj/ai-fun-wallpaper/releases
-[issues]: https://gitee.com/ctzjj/ai-fun-wallpaper/issues
+[issues]: https://github.com/ctzjj/ai-fun-wallpaper/issues
