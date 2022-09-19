@@ -1,0 +1,97 @@
+{
+  "name": "ai-fun-wallpaper",
+  "version": "1.0.7",
+  "homepage": "https://gitee.com/ctzjj/ai-fun-wallpaper",
+  "author": "ctzjj<477622339@qq.com>",
+  "license": "AGPL-3.0",
+  "main": "./src/main.js",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=dev vue-cli-service serve",
+    "start": "cross-env NODE_ENV=dev electron .",
+    "dev": "cross-env NODE_ENV=dev node scripts/start_dev.js",
+    "build:web": "vue-cli-service build",
+    "build:linux": "electron-builder --linux --x64 --ia32 --arm64 --armv7l",
+    "build:mac": "electron-builder --macos --x64 --arm64",
+    "build:win": "electron-builder --win --x64 --ia32"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "btoa": "^1.2.1",
+    "core-js": "^3.6.5",
+    "electron-store": "^5.1.0",
+    "element-ui": "^2.15.0",
+    "require-all": "^3.0.0",
+    "uuid": "^8.3.1",
+    "vue": "^2.6.10",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "wallpaper": "^4.4.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.6",
+    "@vue/cli-plugin-eslint": "~4.4.1",
+    "@vue/cli-plugin-router": "~4.4.1",
+    "@vue/cli-plugin-vuex": "~4.4.1",
+    "@vue/cli-service": "~4.4.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0",
+    "electron": "^11.2.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "build": {
+    "productName": "爱换壁纸",
+    "appId": "ai-fun-wallpaper",
+    "copyright": "Copyright © year ${author}",
+    "asar": true,
+    "artifactName": "爱换壁纸-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "build"
+    },
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "src/icons/mac.icns"
+    },
+    "linux": {
+      "icon": "src/icons/linux/",
+      "category": "Graphics",
+      "target": [
+        {
+          "target": "deb"
+        },
+        {
+          "target": "AppImage"
+        }
+      ]
+    },
+    "win": {
+      "icon": "./icon.ico",
+      "extraResources": "./lib/*.dll"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
+  }
+}
